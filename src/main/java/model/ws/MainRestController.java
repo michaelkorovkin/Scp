@@ -23,11 +23,7 @@ public class MainRestController {
     @PostMapping("/scp/test")
     public Result testMethod (@RequestBody Integer[] input) throws MainException{
         result = new Result();
-        try {
-            result.createResultList(Arrays.asList(input));
-        } catch (Exception e) {
-            throw new MainException("Invalid input params");
-        }
+        result.createResultList(Arrays.asList(input));
         return result;
     }
 
